@@ -5,7 +5,7 @@ var artist = 'No Artist';
 const app = express();
 var tempTime = '0:00';
 
-console.log('Starting YouTubeMusicDiscordRichPresence...')
+console.log('Starting Youtube Music Discord Rich Presence...')
 update(song,artist);
 
 app.use(express.json());
@@ -24,20 +24,19 @@ app.post("/", (request, response) => {
   song = content.song
 
   console.log('Playing now ' + content.song + ' by ' + content.artist + ' Time: ' + content.timeMax.replace(' ', ''));
-  update(content.song, content.artist,Date.now(), timeToMilli(content.timeMax.replace(' ', '')));
+  update(content.song, content.artist,Date.now(), timeToMilli(content.timeMax.replace(' ', '')), content.imageUrl);
   response.sendStatus(200);
 });
 
-app.listen(3000, () => console.log('Ready Senpai!'));
+app.listen(31373, () => console.log('Ready!'));
 
-function update(song,artist,timeNow,timeMax) {
+function update(song,artist,timeNow,timeMax, imageUrl) {
   client.updatePresence({
     state: artist,
     details: song,
     startTimestamp: timeNow,
     endTimestamp: timeMax,
-    largeImageKey: 'ytmusic',
-    smallImageKey: 'play',
+    largeImageKey: imageUrl,
     instance: true,
   });
 }
