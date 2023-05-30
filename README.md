@@ -1,4 +1,10 @@
-# [FIXED FOR V3 MANIFEST] YouTubeMusic DiscordRichPresence
+### Hey, I've migrated it to the V3 Chrome Extensions manifest and also added the functionality to display the song artwork as the game icon.
+
+------------
+
+
+# YouTubeMusic DiscordRichPresence
+
 Shows YouTubeMusic as Discord Rich Presence
 
 ### Step 1:
